@@ -13,8 +13,6 @@ describe('Character', () => {
     };
     expect(character).toEqual(correctCharacter);
   });
-});
-
 
   test('should throw an error if name is not a string', () => {
     expect(() => new Character(123, 'Bowman')).toThrow('Name must be a string with length from 2 to 10 characters');
