@@ -14,12 +14,4 @@ build_script:
 
 test_script:
   - npm test
-
-# deploy_script:
-
-notifications:
-  - provider: Email
-    to:
-      - fff26@mail.ru
-    on_success: never
-    on_failure: always
+  
