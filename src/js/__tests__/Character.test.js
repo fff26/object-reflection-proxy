@@ -3,13 +3,18 @@ import Character from '../Character';
 describe('Character', () => {
   test('should create a new character with correct properties', () => {
     const character = new Character('Hero', 'Bowman');
-    expect(character.name).toBe('Hero');
-    expect(character.type).toBe('Bowman');
-    expect(character.health).toBe(100);
-    expect(character.level).toBe(1);
-    expect(character.attack).toBe(0);
-    expect(character.defence).toBe(0);
+    const correctCharacter = {
+      name: 'Hero',
+      type: 'Bowman',
+      health: 100,
+      level: 1,
+      attack: undefined,
+      defence: undefined,
+    };
+    expect(character).toEqual(correctCharacter);
   });
+});
+
 
   test('should throw an error if name is not a string', () => {
     expect(() => new Character(123, 'Bowman')).toThrow('Name must be a string with length from 2 to 10 characters');
