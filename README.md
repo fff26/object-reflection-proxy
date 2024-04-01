@@ -1,3 +1,3 @@
-# Домашнее задание к лекции «Классы, наследование»
+# Домашнее задание к лекции «Object, Reflection и Proxy»
 
-[![Build status](https://ci.appveyor.com/api/projects/status/suc7m25ot7tqvdfw?svg=true)](https://ci.appveyor.com/project/fff26/classes-inheritance)
+[![Build status](https://ci.appveyor.com/api/projects/status/fmrhut5rmmv88ijp?svg=true)](https://ci.appveyor.com/project/fff26/object-reflection-proxy)
