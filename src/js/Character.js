@@ -33,7 +33,8 @@ export default class Character {
       throw new Error('Points must be a number');
     }
 
-    const damagePoints = points * (1 - this.defence / 100);
+    const defence = this.defence || 0;
+    const damagePoints = points * (1 - defence / 100);
     this.health -= damagePoints;
 
     if (this.health < 0) {
