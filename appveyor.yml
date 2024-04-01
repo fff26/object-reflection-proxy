@@ -20,6 +20,6 @@ test_script:
 notifications:
   - provider: Email
     to:
-      - ваш_email@example.com
+      - fff26@mail.ru
     on_success: change
     on_failure: always
