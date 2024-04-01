@@ -6,7 +6,10 @@ environment:
 build: off
 
 install:
-  - ps: Install-Product node $env:nodejs_version
+  - nvm install $nodejs_version
+  - nvm use $nodejs_version
+  - node -v
+  - npm -v
   - npm install
 
 build_script:
@@ -14,4 +17,3 @@ build_script:
 
 test_script:
   - npm test
-  
