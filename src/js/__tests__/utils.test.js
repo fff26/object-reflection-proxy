@@ -1,4 +1,4 @@
-import { orderByProps } from '../utils.js';
+import { orderByProps, extractSpecials } from '../utils.js';
 
 describe('orderByProps', () => {
     test('should sort properties by the given order and then alphabetically', () => {
@@ -42,3 +42,39 @@ describe('orderByProps', () => {
     });
   });
   
+describe('extractSpecials', () => {
+  test('should return an array of special attacks with default description if not provided', () => {
+    const character = {
+      special: [
+        { id: 8, name: 'Двойной выстрел', icon: 'http://...' },
+        { id: 9, name: 'Нокаутирующий удар', icon: 'http://...' }
+      ]
+    };
+
+    const result = extractSpecials(character);
+    expect(result[0].description).toEqual('Описание недоступно');
+    expect(result[1].description).toEqual('Описание недоступно');
+  });
+
+  test('should return an array of special attacks with provided description', () => {
+    const character = {
+      special: [
+        { id: 8, name: 'Двойной выстрел', icon: 'http://...', description: 'Двойной выстрел наносит двойной урон' },
+        { id: 9, name: 'Нокаутирующий удар', icon: 'http://...', description: 'Нокаутирующий удар оглушает противника' }
+      ]
+    };
+
+    const result = extractSpecials(character);
+    expect(result[0].description).toEqual('Двойной выстрел наносит двойной урон');
+    expect(result[1].description).toEqual('Нокаутирующий удар оглушает противника');
+  });
+
+  test('should return an empty array if no special attacks are provided', () => {
+    const character = {
+      special: []
+    };
+
+    const result = extractSpecials(character);
+    expect(result).toEqual([]);
+  });
+});

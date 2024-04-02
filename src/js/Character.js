@@ -1,5 +1,5 @@
 export default class Character {
-  constructor(name, type) {
+  constructor(name, type, special = []) {
     if (typeof name !== 'string' || name.length < 2 || name.length > 10) {
       throw new Error('Name must be a string with length from 2 to 10 characters');
     }
@@ -15,6 +15,7 @@ export default class Character {
     this.level = 1;
     this.attack = undefined;
     this.defence = undefined;
+    this.special = special;
   }
 
   levelUp() {
