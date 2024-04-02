@@ -10,7 +10,16 @@ describe('Character', () => {
       level: 1,
       attack: undefined,
       defence: undefined,
+      special: [],
     };
+    expect(character).toEqual(correctCharacter);
+  });
+
+  test('should create a new character correct properties', () => {
+    const character = new Character('Hero', 'Bowman');
+    const correctCharacter = new Character('Hero', 'Bowman');
+    correctCharacter.attack = undefined;
+    correctCharacter.defence = undefined;
     expect(character).toEqual(correctCharacter);
   });
 

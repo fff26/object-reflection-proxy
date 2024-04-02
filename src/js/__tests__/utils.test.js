@@ -1,29 +1,4 @@
 import { orderByProps, extractSpecials } from '../utils.js';
-import Character from '../Character.js';
-
-describe('Character', () => {
-  test('should create a new character with correct properties', () => {
-    const character = new Character('Hero', 'Bowman');
-    const correctCharacter = {
-      name: 'Hero',
-      type: 'Bowman',
-      health: 100,
-      level: 1,
-      attack: undefined,
-      defence: undefined,
-      special: [],
-    };
-    expect(character).toEqual(correctCharacter);
-  });
-
-  test('should create a new character correct properties', () => {
-    const character = new Character('Hero', 'Bowman');
-    const correctCharacter = new Character('Hero', 'Bowman');
-    correctCharacter.attack = undefined;
-    correctCharacter.defence = undefined;
-    expect(character).toEqual(correctCharacter);
-  });
-});
 
 describe('orderByProps', () => {
   test('should sort properties by the given order and then alphabetically', () => {
