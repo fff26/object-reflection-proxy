@@ -1,4 +1,4 @@
-import { Bowman, Swordsman, Magician, Daemon, Undead, Zombie } from './js';
+import { Bowman, Swordsman, Magician, Daemon, Undead, Zombie } from './js/index.js';
 
 const bowman = new Bowman('Robin');
 const swordsman = new Swordsman('Arthur');

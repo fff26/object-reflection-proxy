@@ -3,9 +3,11 @@ image: Ubuntu
 environment:
   nodejs_version: "14"
 
-build: off
-
 install:
+  - sudo apt-get update
+  - sudo apt-get install -y curl
+  - curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
+  - source ~/.bashrc
   - nvm install $nodejs_version
   - nvm use $nodejs_version
   - node -v
